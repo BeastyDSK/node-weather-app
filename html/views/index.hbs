@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Weather</title>
+        <link rel='icon' href='/img/icon.png'>
+        <link rel='stylesheet' href='/css/style.css'>    
+    </head>
+
+    <body>
+        <div class="flex">
+            {{>header}}
+            <p>Enter the Location to search</p>
+            <form>
+                <input placeholder="location">
+                <button>Search</button>
+                <p class='result'></p>
+                <p class='res'></p>
+            </form>
+        </div>
+        {{>footer}}
+        <script src='/js/main.js'></script>
+    </body>
+
+</html>
