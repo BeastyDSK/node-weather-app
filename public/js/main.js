@@ -1,5 +1,3 @@
-console.log('hi there');
-
 const form = document.querySelector('form');
 
 form.addEventListener('submit',(event)=>{

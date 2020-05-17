@@ -30,11 +30,13 @@ app.get('',(req,res)=>{
         title:'Weather'
     })
 })
+
 app.get('/help',(req,res)=>{
     res.render('help', {
         title:'Help'
     })
 })
+
 app.get('/about',(req,res)=>{
     res.render('about', {
         title:'About'
@@ -59,14 +61,16 @@ app.get('/weather',(req,res)=>{
                     forecast:`${Fdata.currently.summary}.The Temperature is about ${Fdata.currently.temperature} Celcius.There is a ${Fdata.currently.precipProbability*100}% chance for rain.`,
                     address:place
                 })
+            })
         })
-        })
-    }else{
+    }
+    else{
         res.send({
             error:'Sorry you wont provided any location...'
         })
     }
 })
+
 app.get('/help/*',(req,res)=>{
     res.send('We are working on it.It will available ASAP')
 })
@@ -77,6 +81,7 @@ app.get('*',(req,res)=>{
         error:'Page Not Found'
     })
 })
+
 // setting up the server to start on localhost with a port of 1234 
 app.listen(1234,()=>{
     console.log('server on 1234')
