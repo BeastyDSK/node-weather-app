@@ -8,7 +8,7 @@ form.addEventListener('submit',(event)=>{
     const res = document.querySelector('.res');
     result.textContent = 'loading...';
     res.textContent = '';
-    fetch('http://localhost:1234/weather?address='+address).then((response)=>{
+    fetch('/weather?address='+address).then((response)=>{
         response.json().then((data)=>{
             if(!data.error){
                 result.textContent = data.address;

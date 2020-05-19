@@ -7,6 +7,9 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const app = express()
 
+// settig up the port to work with.
+const port = process.env.PORT || 1234
+
 // setting up the default directories
 const PathforExpress = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../html/views')
@@ -83,6 +86,6 @@ app.get('*',(req,res)=>{
 })
 
 // setting up the server to start on localhost with a port of 1234 
-app.listen(1234,()=>{
-    console.log('server on 1234')
+app.listen(port,()=>{
+    console.log(`server starting on ${port}.`)
 })
