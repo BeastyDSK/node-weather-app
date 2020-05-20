@@ -12,7 +12,7 @@ form.addEventListener('submit',(event)=>{
         response.json().then((data)=>{
             if(!data.error){
                 result.textContent = data.address;
-                res.textContent = data.forecast;
+                res.textContent = `${data.forecast}.The Temperature is about ${data.temperature}.There is a ${data.chance_for_rain}% chance for rain.`;
             }
             else{
                 result.textContent = data.error;

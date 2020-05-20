@@ -61,8 +61,10 @@ app.get('/weather',(req,res)=>{
                     })
                 }
                 res.send({
-                    forecast:`${Fdata.currently.summary}.The Temperature is about ${Fdata.currently.temperature} Celcius.There is a ${Fdata.currently.precipProbability*100}% chance for rain.`,
-                    address:place
+                    temperature:`${Fdata.currently.temperature} Celcius`,
+                    chance_for_rain:(Fdata.currently.precipProbability*100).toFixed(0),
+                    address:place,
+                    forecast:Fdata.currently.summary
                 })
             })
         })
