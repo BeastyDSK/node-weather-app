@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <script data-ad-client="ca-pub-6432146328782441" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        {{!-- <script data-ad-client="ca-pub-6432146328782441" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
         <title>Weather</title>
         <link rel='icon' href='/img/icon.png'>
         <link rel='stylesheet' href='/css/style.css'>    
@@ -12,12 +12,16 @@
         <div class="flex">
             {{>header}}
             <p>Enter the Location to search</p>
+            
             <form>
                 <input placeholder="location">
                 <button>Search</button>
-                <p class='result'></p>
-                <p class='res'></p>
             </form>
+            <p>(or)</p>
+            <button onclick="current();">Current location</button>
+            <p class='result'></p>
+            <p class='res'></p>
+       
         </div>
         {{>footer}}
         <script src='/js/main.js'></script>

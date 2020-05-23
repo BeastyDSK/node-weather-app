@@ -47,8 +47,34 @@ app.get('/about',(req,res)=>{
 })
 
 app.get('/weather',(req,res)=>{
-    if(req.query.address){
-        geocode(req.query.address,(Gerror,{lat,long,place}={})=>{
+    // res.send({
+    //     lat:parseFloat(req.query.lat),
+    //     lon:parseFloat(req.query.lon)
+    // })
+    if(req.query.lat && req.query.lon){
+        geocode.withcoords(parseFloat(req.query.lat),parseFloat(req.query.lon),(Gerror,{place}={})=>{
+            if(Gerror){
+                return res.send({
+                     error:Gerror
+                })
+            }
+            forecast(parseFloat(req.query.lon),parseFloat(req.query.lat),(Ferror,Fdata)=>{
+                if(Ferror){
+                    return res.send({
+                        error:Ferror
+                    })
+                }
+                res.send({
+                    temperature:`${Fdata.currently.temperature} Celcius`,
+                    chance_for_rain:(Fdata.currently.precipProbability*100).toFixed(0),
+                    address:place,
+                    forecast:Fdata.currently.summary
+                })
+            })
+        })
+    }
+    else if(req.query.address){
+        geocode.withlocation(req.query.address,(Gerror,{lat,long,place}={})=>{
             if(Gerror){
                 return res.send({
                     error:Gerror
