@@ -2,28 +2,32 @@
 <html>
 
     <head>
-        <meta name="google-site-verification" content="zjP3Iq6svg--IJD0_AdNO_M7X7iHx5A0IduedSIat00" />
-        <script data-ad-client="ca-pub-6432146328782441" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
         <title>Weather</title>
         <link rel='icon' href='/img/icon.png'>
-        <link rel='stylesheet' href='/css/style.css'>    
+        <link rel='stylesheet' href='/css/style.css'>  
+        <link rel='stylesheet' href='/css/shared.css'>    
     </head>
 
     <body>
-        <div class="flex">
-            {{>header}}
-            <p>Enter the Location to search</p>
-            
-            <form>
-                <input placeholder="location">
-                <button>Search</button>
-            </form>
-            <p>(or)</p>
-            <button onclick="current();">Current location</button>
-            <p class='result'></p>
-            <p class='res'></p>
-       
-        </div>
+        {{>header}}
+         <main>
+        <section class="main-content">
+            <div class="content">
+                <form class="location-form">
+                    <input placeholder="Enter the Location" class="location">
+                </form>
+                <p>( OR )</p>
+                <button onclick="current();" class="check-current">Current Location</button>
+            </div>
+        </section>
+    </main>
+    <div class="weather-report">
+        <p class="rep"></p>
+        <p class="report"></p>
+    </div>
+    <div class='krishna' style="margin-bottom: 13rem;"></div>
         {{>footer}}
         <script src='/js/main.js'></script>
     </body>

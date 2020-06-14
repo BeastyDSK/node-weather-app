@@ -1,50 +1,75 @@
-body{
-    color:#333333;
-    font-family: arial;
-    max-width:50%;
-    margin:0 auto;
-    padding:1% 1.6%;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    display:flex;
-    flex-direction: column;
-    min-height: 98vh;
-}
-.flex{
-    flex-grow:1;
-}
-header h1{
-    font-size: 250%;
-    margin-bottom:4%;
-}
-header{
-    margin-bottom: 6%;
-    margin-top: 4%;
-}
-header main a{
-    text-decoration: none;
-    color:#888888;
-    margin-right: 14px;
-}
-footer{
-    padding:1% 0;
-    margin:2%;
-    border-top:1px solid #eeeeee;
-    color:#888888;
-}
-.intro{
-    letter-spacing: 0.6px;
+body{
+    font-family: 'open sans';
 }
 .list{
-    list-style: none;
+    margin-left: 4rem;
 }
-input{
-    border:1px solid #cccccc;
-    padding: 1%;
+
+/* Styling For Main Content */
+.main-content{
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../img/fog.jpg') center/cover;
+    width: 100vw;
+    height: 60vh;
 }
-button{
-    background: #888888;
-    border: 1px solid #888888;
-    padding:1%;
+
+.content{
+    position: relative;
+    width: 50%;
+    margin: auto auto;
+    text-align: center;
     color: white;
-    cursor: pointer;
+    top: 60%;
 }
+
+p{
+    margin: 1rem;
+}
+
+.location{
+    color: rgba(0, 0, 0, 0.74);
+    width: 20vw;
+    background-color:white;
+    border: 1px solid white;
+    outline: none;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.74);
+}
+
+.check-current{
+    /* font-family: "open sans"; */
+    border: 1px solid white;
+    outline: none;
+    padding: 0.4rem;
+    cursor: pointer;
+    color: springgreen;
+}
+
+.check-current:hover,
+.check-current:active{
+    color:white;
+    background: springgreen;
+    border:1px solid springgreen ;
+
+}
+
+.weather-report{
+    margin-top: 3rem;
+    width: 70%;
+    display: none;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    margin: 3rem auto 3rem auto;
+    border: 1px solid white;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+
+
+

@@ -1,8 +1,10 @@
 const form = document.querySelector('form');
 
 function current(){
-    const result = document.querySelector('.result');
-    const res = document.querySelector('.res');
+    const result = document.querySelector('.rep');
+    const res = document.querySelector('.report');
+    document.querySelector('.krishna').style.margin='0';
+    document.querySelector('.weather-report').style.display='block';
     result.textContent = 'loading...';
     res.textContent = '';
     function showPosition(position){
@@ -10,7 +12,6 @@ function current(){
         fetch(`/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`).then((response)=>{
         
             response.json().then((data)=>{
-        
                 if(!data.error)
                 {
                     result.textContent = data.address;
@@ -40,8 +41,10 @@ form.addEventListener('submit',(event)=>{
     
     event.preventDefault();
     const address = document.querySelector('input').value;
-    const result = document.querySelector('.result');
-    const res = document.querySelector('.res');
+    const result = document.querySelector('.rep');
+    const res = document.querySelector('.report');
+    document.querySelector('.krishna').style.margin='0';
+    document.querySelector('.weather-report').style.display='block';
     result.textContent = 'loading...';
     res.textContent = '';
     
