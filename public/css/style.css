@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
+
 }
 
 body{
     font-family: 'open sans';
+    overflow-x: hidden;
 }
+
 .list{
     margin-left: 4rem;
 }
@@ -39,23 +43,34 @@ p{
     outline: none;
     padding: 0.7rem;
     font-size: 1.1rem;
+    border-radius: 0.3rem;
+    text-align: center;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.74);
+    transition: width 1s;
+}
+
+.location:hover,
+.location:active {
+    width: 30vw;
+    border-bottom: 2px solid greenyellow;
+    
 }
 
 .check-current{
-    /* font-family: "open sans"; */
-    border: 1px solid white;
+    font-family: "open sans";
     outline: none;
-    padding: 0.4rem;
+    padding: 0.7rem 1.4rem;
     cursor: pointer;
-    color: springgreen;
+    color: white;
+    border-radius: 1rem;
+    background: black;
+    border: none;
 }
 
 .check-current:hover,
 .check-current:active{
-    color:white;
-    background: springgreen;
-    border:1px solid springgreen ;
+    color:black;
+    background: white;
 
 }
 
@@ -66,10 +81,9 @@ p{
     font-size: 1.3rem;
     padding: 0.5rem;
     margin: 3rem auto 3rem auto;
-    border: 1px solid white;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.6);
+    border-left: 4px solid rgb(68, 157, 240);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.6);
 }
-
 
 
 

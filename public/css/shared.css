@@ -60,8 +60,10 @@ img{
 
 .menu-item-link:hover,
 .menu-item-link:active{
+    animation: col 1s ease-out;
     border-bottom: 4px solid white;
     color: white;
+    backface-visibility: hidden;
 }
 
 /* Styling For Footer */
@@ -73,4 +75,17 @@ img{
     text-align: center;
     vertical-align: middle;
     color: white;
+}
+
+@keyframes col{
+    0%{
+        color: black;
+        border-bottom: none;
+        width: 0%;
+    }
+    100% {
+        color: white;
+        border-bottom: 4px solid white;
+        width: 100%;
+    }
 }
