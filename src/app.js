@@ -13,7 +13,7 @@ const port = process.env.PORT || 1234
 // setting up the default directories
 const PathforExpress = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../html/views')
-const partialPath = path.join(__dirname,'../html/partials')
+// const partialPath = path.join(__dirname,'../html/partials')
 
 //setting up the handle bar engine
 app.set('view engine','hbs')
@@ -25,7 +25,7 @@ app.set('views',viewsPath)
 app.use(express.static(PathforExpress))
 
 // registering handlebar partials
-hbs.registerPartials(partialPath)
+// hbs.registerPartials(partialPath)
 
 // setting up the get request to send the data when some access the server
 app.get('',(req,res)=>{
@@ -34,17 +34,17 @@ app.get('',(req,res)=>{
     })
 })
 
-app.get('/help',(req,res)=>{
-    res.render('help', {
-        title:'Help'
-    })
-})
+// app.get('/help',(req,res)=>{
+//     res.render('help', {
+//         title:'Help'
+//     })
+// })
 
-app.get('/about',(req,res)=>{
-    res.render('about', {
-        title:'About'
-    })
-})
+// app.get('/about',(req,res)=>{
+//     res.render('about', {
+//         title:'About'
+//     })
+// })
 
 app.get('/weather',(req,res)=>{
     // res.send({
@@ -102,15 +102,8 @@ app.get('/weather',(req,res)=>{
     }
 })
 
-app.get('/help/*',(req,res)=>{
-    res.send('We are working on it.It will available ASAP')
-})
-
 app.get('*',(req,res)=>{
-    res.render('error',{
-        title:'Error 404',
-        error:'Page Not Found'
-    })
+    res.send('We are working on it.It will available ASAP')
 })
 
 // setting up the server to start on localhost with a port of 1234 

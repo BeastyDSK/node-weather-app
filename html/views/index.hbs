@@ -1,36 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <script data-ad-client="ca-pub-6432146328782441" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <title>Weather</title>
-        <link rel='icon' href='/img/icon.png'>
-        <link rel='stylesheet' href='/css/style.css'>  
-        <link rel='stylesheet' href='/css/shared.css'>    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather | Get The Weather</title>
+        <link rel="icon" href="/img/sky.png">
+        <link rel='stylesheet' href="/css/style.css">
     </head>
 
     <body>
-        {{>header}}
-         <main>
-        <section class="main-content">
-            <div class="content">
-                <form class="location-form">
-                    <input placeholder="Enter the Location" class="location">
-                </form>
-                <p>( OR )</p>
-                <button onclick="current();" class="check-current">Current Location</button>
-            </div>
-        </section>
-    </main>
-    <div class="weather-report">
-        <p class="rep"></p>
-        <p class="report"></p>
-    </div>
-    <div class='krishna' style="margin-bottom: 13rem;"></div>
-        {{>footer}}
-        <script src='/js/main.js'></script>
-    </body>
+        <main class="container">
+            <h1 class="heading-primary">Weather<img src="/img/day.svg"></h1>
 
+            <section class="form--section">
+                <div class="form">
+                    <form>
+                        <input type="text" id="location" placeholder="Location">
+                        <label for="location" class="label" >Location</label>
+                    </form>
+                </div>
+
+                <p>(OR)</p>
+
+                <div class="btn-current">
+                    <button class="current" onclick="current();">
+                        <span>
+                            Current Location
+                        </span>
+                    </button>
+                </div>
+
+                <div class="weather-data">
+                    <p class="res"></p>
+                    <img class="result-img">
+                    <p class="result-place"></p>
+                    <p class="result-type"></p>
+                    <p class="result-temprature"></p>
+                    <p class="result-rain"></p>
+                </div>
+
+            </section>
+            <footer class="footer">
+                <p>Made with<img class="heart"
+                src="/img/heart.svg"> By Beast</p>
+            </footer>
+        </main>
+
+        <script src="/js/main.js" async defer></script>
+    </body>
 </html>
