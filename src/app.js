@@ -1,11 +1,18 @@
 // Loading the default and required npm modules
 const path = require('path')
+var sslRedirect = require('heroku-ssl-redirect');
 const express = require('express')
 const hbs = require('hbs')
 const chalk = require('chalk')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const app = express()
+
+
+
+// making the request to https
+
+app.use(sslRedirect());
 
 // settig up the port to work with.
 const port = process.env.PORT || 1234
