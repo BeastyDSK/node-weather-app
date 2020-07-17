@@ -16,6 +16,12 @@ function current(){
     result_img.style.visibility='hidden';
     result_img.src="";
 
+    if(document.querySelector('.moveright')) {
+        result_place.classList.remove('moveright');
+        result_temp.classList.remove('moveright');
+        result_type.classList.remove('moveleft');
+        result_rain.classList.remove('moveleft');
+    }
 
     function showPosition(position){
         // console.log(position.coords.longitude,position.coords.latitude);
@@ -45,6 +51,13 @@ function current(){
                     result_type.textContent = data.forecast;
                     result_temp.textContent = data.temperature;
                     result_rain.textContent = `There is a ${data.chance_for_rain}% chance for rain.`;
+
+
+                    result_place.classList.add('moveright');
+                    result_temp.classList.add('moveright');
+                    result_type.classList.add('moveleft');
+                    result_rain.classList.add('moveleft');
+
                 }
                 else
                 {
@@ -85,6 +98,13 @@ form.addEventListener('submit',(event)=>{
     result_img.style.visibility='hidden';
     result_img.src = "";
 
+    if(document.querySelector('.moveright')) {
+        result_place.classList.remove('moveright');
+        result_temp.classList.remove('moveright');
+        result_type.classList.remove('moveleft');
+        result_rain.classList.remove('moveleft');
+    }
+
     fetch('/weather?address='+address).then((response)=>{
     
         response.json().then((data)=>{
@@ -112,6 +132,12 @@ form.addEventListener('submit',(event)=>{
                 result_type.textContent = data.forecast;
                 result_temp.textContent = data.temperature;
                 result_rain.textContent = `There is a ${data.chance_for_rain}% chance for rain.`;
+
+
+                result_place.classList.add('moveright');
+                result_temp.classList.add('moveright');
+                result_type.classList.add('moveleft');
+                result_rain.classList.add('moveleft');
             }
             else
             {
