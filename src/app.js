@@ -109,8 +109,17 @@ app.get('/weather',(req,res)=>{
     }
 })
 
-app.get('*',(req,res)=>{
+
+app.get('/about',(req,res)=>{
     res.send('We are working on it.It will available ASAP')
+})
+
+app.get('/help',(req,res)=>{
+    res.send('We are working on it.It will available ASAP')
+})
+
+app.get('*',(req,res)=>{
+    res.render('error')
 })
 
 // setting up the server to start on localhost with a port of 1234 

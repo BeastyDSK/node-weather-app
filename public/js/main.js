@@ -24,7 +24,6 @@ function current(){
     }
 
     function showPosition(position){
-        // console.log(position.coords.longitude,position.coords.latitude);
         fetch(`/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}`).then((response)=>{
         
             response.json().then((data)=>{
