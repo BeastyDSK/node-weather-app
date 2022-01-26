@@ -7,7 +7,7 @@ const forecast = (longitude,latitude,callback)=>{
     
     request({url:WeatherURL,json:true},(error,{body}={})=>{
         if(error){
-            callback('Unalbe to connect to location services',undefined)
+            callback('Unable to connect to location services',undefined)
         }
         else if(body.error){
             callback('location data is not valid',undefined)

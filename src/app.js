@@ -41,23 +41,8 @@ app.get('',(req,res)=>{
     })
 })
 
-// app.get('/help',(req,res)=>{
-//     res.render('help', {
-//         title:'Help'
-//     })
-// })
-
-// app.get('/about',(req,res)=>{
-//     res.render('about', {
-//         title:'About'
-//     })
-// })
 
 app.get('/weather',(req,res)=>{
-    // res.send({
-    //     lat:parseFloat(req.query.lat),
-    //     lon:parseFloat(req.query.lon)
-    // })
     if(req.query.lat && req.query.lon){
         geocode.withcoords(parseFloat(req.query.lat),parseFloat(req.query.lon),(Gerror,{place}={})=>{
             if(Gerror){
@@ -72,7 +57,7 @@ app.get('/weather',(req,res)=>{
                     })
                 }
                 res.send({
-                    temperature:`${Fdata.currently.temperature} Celcius`,
+                    temperature:parseFloat(Fdata.currently.temperature).toFixed(0),
                     chance_for_rain:(Fdata.currently.precipProbability*100).toFixed(0),
                     address:place,
                     forecast:Fdata.currently.summary
@@ -94,7 +79,7 @@ app.get('/weather',(req,res)=>{
                     })
                 }
                 res.send({
-                    temperature:`${Fdata.currently.temperature} Celcius`,
+                    temperature:  parseFloat(Fdata.currently.temperature).toFixed(0),
                     chance_for_rain:(Fdata.currently.precipProbability*100).toFixed(0),
                     address:place,
                     forecast:Fdata.currently.summary
@@ -104,18 +89,18 @@ app.get('/weather',(req,res)=>{
     }
     else{
         res.send({
-            error:'Sorry you wont provided any location...'
+            error:'Sorry you didn\'t provided any location.'
         })
     }
 })
 
 
 app.get('/about',(req,res)=>{
-    res.send('We are working on it.It will available ASAP')
+    res.send('I am working on it.It will available ASAP')
 })
 
 app.get('/help',(req,res)=>{
-    res.send('We are working on it.It will available ASAP')
+    res.send('I am working on it.It will available ASAP')
 })
 
 app.get('*',(req,res)=>{

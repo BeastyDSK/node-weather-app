@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap" rel="stylesheet">        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <meta name="description" content="It is a simple weather application using mapbox and darksky api's.And some node-js">
-        <meta name="keywords" content="weather app,weather io,dsk-weather-io, weather herokuapp,herokuapp">
-        <meta name="author" content="Krishnaprasanth.D.V (BeastDsk)">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="WeatherIO is a simple and easy to use online Weather Application to get the weather data for a specific location." />
+    <meta name="keywords"
+        content="krishnaprasanth D V, krishnaprasanth DSK, DSK, weather heroku, krishnaprasanth, weather app,weather io,dsk-weather-io, weather herokuapp,herokuapp" />
+    <meta name="author" content="DSK" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=6.0">
-        <title>Weather | Get The Weather</title>
-        <link rel="icon" href="/img/sky.png">
-        <link rel='stylesheet' href="/css/style.css">
+    <title>WeatherIO | CS</title>
 
-    </head>
+    <link rel="icon" href="/img/sky.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script>
+        document.addEventListener("readystatechange",(e)=>{
+            if(document.readyState==="complete")
+            {
+                setTimeout(()=>{
+                    document.querySelector(".loading-screen").style.display = "none";
+                }, 500);
+            }
+        })
+    </script>
+</head>
 
-<body class="error">
-    <div class="error-container">
-        <h1>oops (-_-)</h1>
+<body class="center-vh">
+    <div class="error-container center-vh">
+        <h1 class="heading-primary">oops (-_-)</h1>
         <h3>Error 404</h3>
         <h3>Page not found</h3>
         <p>I am working on it</p>
