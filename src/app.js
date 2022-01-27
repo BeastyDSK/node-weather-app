@@ -96,11 +96,11 @@ app.get('/weather',(req,res)=>{
 
 
 app.get('/about',(req,res)=>{
-    res.send('I am working on it.It will available ASAP')
+    res.send('I am working on it.')
 })
 
 app.get('/help',(req,res)=>{
-    res.send('I am working on it.It will available ASAP')
+    res.send('I am working on it.')
 })
 
 app.get('*',(req,res)=>{

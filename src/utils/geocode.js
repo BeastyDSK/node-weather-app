@@ -7,10 +7,10 @@ const GeoCode = {
     
         request({url:GeocodeURL,json:true},(error,{body}={})=>{
             if(error){
-                callback('Unable to contact location services.',undefined)
+                callback('Unable to contact Location services.',undefined)
             }
             else if(body.features.length===0){
-                callback('Location Not Available.Try Another Search or Check the Location.',undefined)
+                callback('Location Not Available.',undefined)
             }
             else
             {
@@ -27,10 +27,10 @@ const GeoCode = {
     
         request({url:GeocodeURL,json:true},(error,{body}={})=>{
             if(error){
-                callback('Unable to contact location services.',undefined)
+                callback('Unable to contact Location services.',undefined)
             }
             else if(body.features.length===0){
-                callback('Location Not Available.Try Another Search or Check the Location.',undefined)
+                callback('Location Not Available.',undefined)
             }
             else
             {
