@@ -1,7 +1,1 @@
 node_modules/
-
-public/css/style-not-minified.css
-
-public/js/main-not-minified.js
-
-/postcss.config.js
