@@ -3,7 +3,6 @@ const request = require("request");
 const GeoCode = {
     withlocation(location, callback) {
         const GeocodeURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(location)}.json?limit=1&access_token=${process.env.GeocodeURL}`;
-
         request({ url: GeocodeURL, json: true }, (error, { body } = {}) => {
             if (error) {
                 callback("Unable to contact Location services.", undefined);
