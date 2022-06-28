@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="WeatherIO is a simple and easy to use online Weather Application to get the weather data for a specific location." />
+        <meta name="keywords" content="krishnaprasanth D V, krishnaprasanth DSK, DSK, weather heroku, krishnaprasanth, weather app,weather io,dsk-weather-io, weather herokuapp,herokuapp" />
+        <meta name="author" content="DSK" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WeatherIO | The Weather</title>
+        <link rel="icon" href="/img/sky.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body class="center-vh">
+        <main class="container">
+            <header class="header">
+                <h1 class="heading-primary">WEATHER</h1>
+            </header>
+            <section class="form">
+                <form class="location">
+                    <input id="gps" class="location-input" placeholder="Location" />
+                    <button class="search-icon center-vh" title="Search">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </form>
+                <small id="error"></small>
+            </section>
+            <section class="center-vh">
+                <div class="weather-info grid">
+                    <div class="weather-temp grid">
+                        <img class="weather-icon" id="wicon" src="" alt="Weather forecast Image Animated Icon" />
+                        <span class="weather-data"><strong id="wtemp"></strong>C</span>
+                    </div>
+                    <svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                        <path d="M96,147V48a32,32,0,0,1,64,0v99h0a52,52,0,1,1-64,0Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                        <circle cx="128" cy="188" r="20" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+                        <line x1="128" y1="168" x2="128" y2="88" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                    </svg>
+                    <span class="weather-data" id="wclimate"></span>
+
+                    <svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                        <line x1="56" y1="232" x2="200" y2="232" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <circle cx="128" cy="104" r="32" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+                        <path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                    </svg>
+                    <span class="weather-data" id="wloc"></span>
+                    <svg class="weather-icon" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+                        <path d="M176,200a24,24,0,0,1-48,0V136" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                        <path
+                            d="M32.3,136a7.9,7.9,0,0,1-7.9-8.7,104,104,0,0,1,207.2,0,7.9,7.9,0,0,1-7.9,8.7Z"
+                            fill="none"
+                            stroke="#000000"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="16"
+                        ></path>
+                    </svg>
+                    <span class="weather-data" id="wrain"></span>
+                </div>
+            </section>
+        </main>
+        <script src="/js/main.js" defer></script>
+    </body>
+</html>
