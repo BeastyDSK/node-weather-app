@@ -4,11 +4,13 @@ var sslRedirect = require("heroku-ssl-redirect");
 var compression = require("compression");
 var helmet = require("helmet");
 const express = require("express");
-const dotenv = require("dotenv");
 
-dotenv.config({
-    path: path.join(__dirname, "config.env"),
-});
+if (process.env.NODE_ENV === "development") {
+    const dotenv = require("dotenv");
+    dotenv.config({
+        path: path.join(__dirname, "config.env"),
+    });
+}
 
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
